@@ -1,0 +1,26 @@
+{
+    "name": "avolle/ci-testing",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Test\\": "tests"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "infection/infection": "^0.21.0",
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^0.12.77",
+        "symfony/var-dumper": "^5.2"
+    },
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "stan": "phpstan analyze",
+        "infection": "infection --threads=4"
+    },
+    "prefer-stable": true
+}

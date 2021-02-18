@@ -1,0 +1,26 @@
+name: Infection
+on: [push]
+jobs:
+  infection:
+    name: Run Infection mutation testing
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: [ '7.4' ]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-dept: 1
+
+      - name: Setup PHP
+        uses: shivammathur/setup.php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: pcov
+
+      - name: Composer
+        run: composer install --ignore-platform-reqs
+
+      - name: Run Infection
+        run: vendor/bin/phpunit --threads=4 --logger-github
