@@ -24,7 +24,4 @@
         </testsuite>
         <!-- Add plugin test suites here. -->
     </testsuites>
-    <logging>
-        <log type="coverage-clover" target="clover.xml"/>
-    </logging>
 </phpunit>
