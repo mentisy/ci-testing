@@ -1,4 +1,4 @@
-name: Infection
+name: CI Workflow
 on: [push]
 jobs:
   testsuite:
