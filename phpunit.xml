@@ -24,5 +24,7 @@
         </testsuite>
         <!-- Add plugin test suites here. -->
     </testsuites>
-    <!-- Setup a listener for fixtures -->
+    <logging>
+        <log type="coverage-clover" target="clover.xml"/>
+    </logging>
 </phpunit>
