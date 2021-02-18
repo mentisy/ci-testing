@@ -23,4 +23,4 @@ jobs:
         run: composer install --ignore-platform-reqs
 
       - name: Run Infection
-        run: vendor/bin/phpunit --threads=4 --logger-github
+        run: vendor/bin/infection --threads=4 --logger-github
